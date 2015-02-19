@@ -18,7 +18,7 @@ var extra = chunks;
 var printer = [];
 var y = 1;
 
-for (var i = 0; i < subtractor; i++) {
+for (var i = 0; i < groups; i++) {
         var currentArray = [];
     for (var x = 0; x < subtractor; x++) {
         currentArray.push(y);
