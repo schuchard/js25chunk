@@ -54,7 +54,7 @@ var iterate = function(input) {
 
     var title = function(num) {
         return $('<h4 class="title">Group '+ (i+1) +'</h4>');
-    }
+    };
 
     // Add inital loading animation then remove
     $('.main').append(row).one(animationEnd,function(){
@@ -90,7 +90,7 @@ var getAttention = function(counter, delay){
             getAttention(counter, delay);
         }
     }, delay);
-}
+};
 
 
 // Check for singular or plurarl spelling
@@ -99,7 +99,7 @@ var personString = function(num){
         return "person";
     }
     return "people";
-}
+};
 
 
 // Check for singular or plurarl spelling
@@ -108,7 +108,7 @@ var groupString = function(num){
         return "group";
     }
     return "groups";
-}
+};
 
 
 // Add figures to navBar for the requested groupings
@@ -171,6 +171,10 @@ var validate = function(){
   });
 };
 
+var toolTipLoad = function () {
+  return $('[data-toggle="tooltip"]').tooltip();
+};
+
 // Animations
 var animationLoad = 'animated pulse';
 var animationHover = 'animated pulse';
@@ -185,7 +189,7 @@ $(document).on('ready', function() {
     getAttention(3, 8000);
     $('input').focus(function(){
         attention = true;
-    })
+    });
 
     // Animate hover
     $('.main').on('mouseenter', '.row', function(){
@@ -193,6 +197,8 @@ $(document).on('ready', function() {
             $(this).removeClass(animationHover);
         });
     });
+
+    toolTipLoad();
 
     // Set validation rules for form
     validate();
@@ -212,5 +218,5 @@ $(document).on('ready', function() {
             $('form')[0].reset();
             attention = true;
         }
-    })
+    });
 });
